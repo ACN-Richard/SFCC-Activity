@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <!--[if gt IE 9]><!-->
+    <script src="https://use.fontawesome.com/d98d077045.js">
+    </script>   
+    <script>//common/scripts.isml</script>
+    <script defer type="text/javascript" src="js/main.js">
+    </script>
+    <script defer type="text/javascript" src="js/checkoutRegistration.js">
+    </script>
+    <!--<![endif]-->
+    <meta charset=UTF-8>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Salesforce Commerce Cloud | 6.1.0
+    </title>
+    <meta name="description" content="Commerce Cloud Storefront Reference Architecture"/>
+    <meta name="keywords" content="Commerce Cloud Storefront Reference Architecture"/>
+    <link rel="icon" type="image/png" href="images/favicons/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="images/favicons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="images/favicons/favicon-128.png" sizes="128x128" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/checkout/checkout.css"  />
+    <link rel="stylesheet" href="css/skin/skin.css" />
+    <meta name="rqid" content="RRRRRRRRRRRRRRRR"/>
+    <link type="text/css" href="/on/demandware.static/Sites-Site/-/-/internal/css/dwux-sf-15.5.css?v=22.8.1.11" rel="stylesheet" />
+  </head>
+  <body>
+    <span id="DW-SFToolkit-config" data-data="{&quot;baseURL&quot;:&quot;/on/demandware.static/Sites-Site/-/-/internal/&quot;,&quot;editURL&quot;:&quot;https://zzrl-020.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/Sites-Site/-/&quot;,&quot;site&quot;:&quot;#&quot;,&quot;cp&quot;:{&quot;serverDateTimePattern&quot;:&quot;yyyyMMddHHmm&quot;,&quot;datePattern&quot;:&quot;yyyy/MM/dd&quot;,&quot;timePattern&quot;:&quot;HH:mm&quot;}}" >
+    </span>
+    <script type="application/javascript" src="/on/demandware.static/Sites-Site/-/-/internal/jscript/dwux-init.js?v=22.8.1.11">
+    </script>
+    <div class="page" data-action="Order-Confirm" data-querystring="" >
+      <header>
+        <a href="#maincontent" class="skip" aria-label="Skip to main content">Skip to main content
+        </a>
+        <a href="#footercontent" class="skip" aria-label="Skip to footer content">Skip to footer content
+        </a>
+        <div class="header-banner slide-up d-none">
+          <div class="container">
+            <div class="d-flex justify-content-between">
+              <div>
+              </div>
+              <div class="content">
+                <div class="html-slot-container">
+                  <div class="header-promotion">
+                    <strong>FREE 2-Day SHIPPING
+                    </strong> FOR ORDERS OVER $300
+                  </div>
+                </div>
+              </div>
+              <div class="close-button">
+                <button type="button" class="close" aria-label="Close header banner">
+                  <span aria-hidden="true">&times;
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav role="navigation">
+          <div class="header container">
+            <div class="row">
+              <div class="col-12">
+                <div class="navbar-header brand">
+                  <a class="logo-home" href="/on/demandware.store/#/default/Home-Show" title="Commerce Cloud Storefront Reference Architecture Home">
+                    <img class="hidden-md-down" src="images/logo.svg" alt="Commerce Cloud Storefront Reference Architecture" />
+                    <img class="d-lg-none" src="images/logo-small.svg" alt="Commerce Cloud Storefront Reference Architecture" />
+                  </a>
+                </div>
+                <div class="navbar-header">
+                  <div class="pull-left">
+                    <div class="hidden-md-down">
+                      <div class="user hidden-md-down">
+                        <a href="https://zzrl-020.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/#/default/Login-Show" role="button" aria-label="Login to your account">
+                          <i class="fa fa-sign-in" aria-hidden="true">
+                          </i>
+                          <span class="user-message">Login
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                    <button class="navbar-toggler d-md-none" type="button" aria-controls="sg-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                      &#9776; 
+                      <span class="hidden-xs-down">Menu
+                      </span>
+                    </button>
+                  </div>
+                  <div class="pull-right">
+                    <div class="search hidden-xs-down">
+                      <div class="site-search">
+                        <form role="search"
+                              action="/on/demandware.store/#/default/Search-Show"
+                              method="get"
+                              name="simpleSearch">
+                          <input class="form-control search-field"
+                                 type="text"
+                                 name="q"
+                                 value=""
+                                 placeholder="Search (keywords,etc)"
+                                 role="combobox"
+                                 aria-describedby="search-assistive-text"
+                                 aria-haspopup="listbox"
+                                 aria-owns="search-results"
+                                 aria-expanded="false"
+                                 aria-autocomplete="list"
+                                 aria-activedescendant=""
+                                 aria-controls="search-results"
+                                 aria-label="Enter Keyword or Item No."
+                                 autocomplete="off" />
+                          <button type="reset" name="reset-button" class="fa fa-times reset-button d-none" aria-label="Clear search keywords">
+                          </button>
+                          <button type="submit" name="search-button" class="fa fa-search" aria-label="Submit search keywords">
+                          </button>
+                          <div class="suggestions-wrapper" data-url="/on/demandware.store/#/default/SearchServices-GetSuggestions?q=">
+                          </div>
+                          <input type="hidden" value="default" name="lang">
+                        </form>
+                      </div>
+                    </div>
+                    <div class="minicart" data-action-url="/on/demandware.store/#/default/Cart-MiniCartShow">
+                      <div class="minicart-total hide-link-med">
+                        <a class="minicart-link" href="https://zzrl-020.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/#/default/Cart-Show" title="Cart 0 Items" aria-label="Cart 0 Items" aria-haspopup="true">
+                          <i class="minicart-icon fa fa-shopping-bag">
+                          </i>
+                          <span class="minicart-quantity">
+                            0
+                          </span>
+                        </a>
+                      </div>
+                      <div class="minicart-total hide-no-link">
+                        <i class="minicart-icon fa fa-shopping-bag">
+                        </i>
+                        <span class="minicart-quantity">
+                          0
+                        </span>
+                      </div>
+                      <div class="popover popover-bottom">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main-menu navbar-toggleable-sm menu-toggleable-left multilevel-dropdown d-none d-md-block" id="sg-navbar-collapse">
+            <div class="container">
+              <div class="row">
+                <nav class="navbar navbar-expand-md bg-inverse col-12">
+                  <div class="close-menu clearfix d-lg-none">
+                    <div class="back pull-left">
+                      <button role="button" aria-label="Back to previous menu">
+                        <span class="caret-left">
+                        </span>
+                        Back
+                      </button>
+                    </div>
+                    <div class="close-button pull-right">
+                      <button role="button" aria-label="Close Menu">
+                        Close
+                        <span aria-hidden="true">&times;
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="menu-group" role="navigation">
+                    <ul class="nav navbar-nav" role="menu">
+                      <li class="nav-item dropdown" role="presentation">
+                        <a href="/s/#/default/new%20arrivals/" id="newarrivals" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">New Arrivals
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-hidden="true" aria-label="newarrivals">
+                          <li class="dropdown-item" role="presentation">
+                            <a href="/s/#/default/new%20arrivals/womens/" id="newarrivals-womens" role="menuitem" class="dropdown-link" tabindex="0">Womens
+                            </a>
+                          </li>
+                          <li class="dropdown-item" role="presentation">
+                            <a href="/s/#/default/new%20arrivals/mens/" id="newarrivals-mens" role="menuitem" class="dropdown-link" tabindex="0">Mens
+                            </a>
+                          </li>
+                          <li class="dropdown-item" role="presentation">
+                            <a href="/s/#/default/new%20arrivals/electronics/" id="newarrivals-electronics" role="menuitem" class="dropdown-link" tabindex="0">Electronics
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown" role="presentation">
+                        <a href="/s/#/default/womens/" id="womens" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">Womens
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-hidden="true" aria-label="womens">
+                          <li class="dropdown-item dropdown" role="presentation">
+                            <a href="/s/#/default/womens/clothing/" id="womens-clothing" class="dropdown-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">Clothing
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-hidden="true" aria-label="womens-clothing">
+                              <li class="dropdown-item" role="presentation">
+                                <a href="/s/#/default/womens/clothing/outfits/" id="womens-outfits" role="menuitem" class="dropdown-link" tabindex="0">Outfits
+                                </a>
+                              </li>
+                              <li class="dropdown-item" role="presentation">
+                                <a href="/s/#/default/womens/clothing/tops/" id="womens-clothing-tops" role="menuitem" class="dropdown-link" tabindex="0">Tops
+                                </a>
+                              </li>
+                              <li class="dropdown-item" role="presentation">
+                                <a href="/s/#/default/womens/clothing/dresses/" id="womens-clothing-dresses" role="menuitem" class="dropdown-link" tabindex="0">Dresses
+                                </a>
+                              </li>
+                              <li class="dropdown-item" role="presentation">
+                                <a href="/s/#/default/womens/clothing/bottoms/" id="womens-clothing-bottoms" role="menuitem" class="dropdown-link" tabindex="0">Bottoms
+                                </a>
+                              </li>
+                              <li class="dropdown-item" role="presentation">
+                                <a href="/s/#/default/womens/clothing/jackets%20%26%20coats/" id="womens-clothing-jackets" role="menuitem" class="dropdown-link" tabindex="0">Jackets &amp; Coats
+                                </a>
+                              </li>
+                              <li class="dropdown-item" role="presentation">
+                                <a href="/s/#/default/womens/clothing/feeling%20red/" id="womens-clothing-feeling-red" role="menuitem" class="dropdown-link" tabindex="0">Feeling Red
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="dropdown-item dropdown" role="presentation">
+                            <a href="/s/#/default/womens/jewelry/" id="womens-jewelry" class="dropdown-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">Jewelry
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-hidden="true" aria-label="womens-jewelry">
+                              <li class="dropdown-item" role="presentation">
+                                <a href="/s/#/default/womens/jewelry/earrings/" id="womens-jewelry-earrings" role="menuitem" class="dropdown-link" tabindex="0">Earrings
+                                </a>
+                              </li>
+                              <li class="dropdown-item" role="presentation">
+                                <a href="/s/#/default/womens/jewelry/bracelets/" id="womens-jewelry-bracelets" role="menuitem" class="dropdown-link" tabindex="0">Bracelets
+                                </a>
+                              </li>
+                              <li class="dropdown-item" role="presentation">
+                                <a href="/s/#/default/womens/jewelry/necklaces/" id="womens-jewelry-necklaces" role="menuitem" class="dropdown-link" tabindex="0">Necklaces
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="dropdown-item dropdown" role="presentation">
+                            <a href="/s/#/default/womens/accessories/" id="womens-accessories" class="dropdown-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">Accessories
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-hidden="true" aria-label="womens-accessories">
+                              <li class="dropdown-item" role="presentation">
+                                <a href="/s/#/default/womens/accessories/scarves/" id="womens-accessories-scarves" role="menuitem" class="dropdown-link" tabindex="0">Scarves
+                                </a>
+                              </li>
+                              <li class="dropdown-item" role="presentation">
+                                <a href="/s/#/default/womens/accessories/shoes/" id="womens-accessories-shoes" role="menuitem" class="dropdown-link" tabindex="0">Shoes
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown" role="presentation">
+                        <a href="/s/#/default/mens/" id="mens" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">Mens
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-hidden="true" aria-label="mens">
+                          <li class="dropdown-item dropdown" role="presentation">
+                            <a href="/s/#/default/mens/clothing/" id="mens-clothing" class="dropdown-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">Clothing
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-hidden="true" aria-label="mens-clothing">
+                              <li class="dropdown-item" role="presentation">
+                                <a href="/s/#/default/mens/clothing/suits/" id="mens-clothing-suits" role="menuitem" class="dropdown-link" tabindex="0">Suits
+                                </a>
+                              </li>
+                              <li class="dropdown-item" role="presentation">
+                                <a href="/s/#/default/mens/clothing/jackets%20%26%20coats/" id="mens-clothing-jackets" role="menuitem" class="dropdown-link" tabindex="0">Jackets &amp; Coats
+                                </a>
+                              </li>
+                              <li class="dropdown-item" role="presentation">
+                                <a href="/s/#/default/mens/clothing/dress%20shirts/" id="mens-clothing-dress-shirts" role="menuitem" class="dropdown-link" tabindex="0">Dress Shirts
+                                </a>
+                              </li>
+                              <li class="dropdown-item" role="presentation">
+                                <a href="/s/#/default/mens/clothing/shorts/" id="mens-clothing-shorts" role="menuitem" class="dropdown-link" tabindex="0">Shorts
+                                </a>
+                              </li>
+                              <li class="dropdown-item" role="presentation">
+                                <a href="/s/#/default/mens/clothing/pants/" id="mens-clothing-pants" role="menuitem" class="dropdown-link" tabindex="0">Pants
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="dropdown-item dropdown" role="presentation">
+                            <a href="/s/#/default/mens/accessories/" id="mens-accessories" class="dropdown-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">Accessories
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-hidden="true" aria-label="mens-accessories">
+                              <li class="dropdown-item" role="presentation">
+                                <a href="/s/#/default/mens/accessories/ties/" id="mens-accessories-ties" role="menuitem" class="dropdown-link" tabindex="0">Ties
+                                </a>
+                              </li>
+                              <li class="dropdown-item" role="presentation">
+                                <a href="/s/#/default/mens/accessories/gloves/" id="mens-accessories-gloves" role="menuitem" class="dropdown-link" tabindex="0">Gloves
+                                </a>
+                              </li>
+                              <li class="dropdown-item" role="presentation">
+                                <a href="/s/#/default/mens/accessories/luggage/" id="mens-accessories-luggage" role="menuitem" class="dropdown-link" tabindex="0">Luggage
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown" role="presentation">
+                        <a href="/s/#/default/electronics/" id="electronics" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">Electronics
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-hidden="true" aria-label="electronics">
+                          <li class="dropdown-item" role="presentation">
+                            <a href="/s/#/default/electronics/televisions/" id="electronics-televisions" role="menuitem" class="dropdown-link" tabindex="0">Televisions
+                            </a>
+                          </li>
+                          <li class="dropdown-item" role="presentation">
+                            <a href="/s/#/default/electronics/digital%20cameras/" id="electronics-digital-cameras" role="menuitem" class="dropdown-link" tabindex="0">Digital Cameras
+                            </a>
+                          </li>
+                          <li class="dropdown-item" role="presentation">
+                            <a href="/s/#/default/electronics/ipod%20%26%20mp3%20players/" id="electronics-digital-media-players" role="menuitem" class="dropdown-link" tabindex="0">iPod &amp; MP3 Players
+                            </a>
+                          </li>
+                          <li class="dropdown-item" role="presentation">
+                            <a href="/s/#/default/electronics/gps%20navigation/" id="electronics-gps-units" role="menuitem" class="dropdown-link" tabindex="0">GPS Navigation
+                            </a>
+                          </li>
+                          <li class="dropdown-item" role="presentation">
+                            <a href="/s/#/default/electronics/gaming/" id="electronics-gaming" role="menuitem" class="dropdown-link" tabindex="0">Gaming
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a href="https://zzrl-020.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/#/default/Search-Show?cgid=root&amp;srule=top-sellers" id="top-seller" class="nav-link" role="link" tabindex="0">
+                        </a>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a href="/s/#/default/gloves/" id="Gloves" class="nav-link" role="link" tabindex="0">Gloves
+                        </a>
+                      </li>
+                      <li class="nav-item d-lg-none" role="menuitem">
+                        <a href="https://zzrl-020.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/#/default/Login-Show" class="nav-link">
+                          <i class="fa fa-sign-in" aria-hidden="true">
+                          </i>
+                          <span class="user-message">Login
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div class="search-mobile d-sm-none">
+            <div class="site-search">
+              <form role="search"
+                    action="/on/demandware.store/#/default/Search-Show"
+                    method="get"
+                    name="simpleSearch">
+                <input class="form-control search-field"
+                       type="text"
+                       name="q"
+                       value=""
+                       placeholder="Search (keywords,etc)"
+                       role="combobox"
+                       aria-describedby="search-assistive-text"
+                       aria-haspopup="listbox"
+                       aria-owns="search-results"
+                       aria-expanded="false"
+                       aria-autocomplete="list"
+                       aria-activedescendant=""
+                       aria-controls="search-results"
+                       aria-label="Enter Keyword or Item No."
+                       autocomplete="off" />
+                <button type="reset" name="reset-button" class="fa fa-times reset-button d-none" aria-label="Clear search keywords">
+                </button>
+                <button type="submit" name="search-button" class="fa fa-search" aria-label="Submit search keywords">
+                </button>
+                <div class="suggestions-wrapper" data-url="/on/demandware.store/#/default/SearchServices-GetSuggestions?q=">
+                </div>
+                <input type="hidden" value="default" name="lang">
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div role="main" id="maincontent">
+        <div class="hero slant-down hero-confirmation">
+          <h1 class="page-title">Thank You
+          </h1>
+        </div>
+        <div class="container receipt ">
+          <div class="row">
+            <div class="col-sm-6 offset-sm-3 offset-md-0">
+              <h2 class="order-thank-you-msg">Thank you for your order.
+              </h2>
+              <p class="order-thank-you-email-msg">You will receive an email confirmation shortly at test@gmail.com
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 offset-sm-3 offset-md-0 push-md-6">
+              <div>
+                <div class="card order-confirm-create-account">
+                  <div class="card-header">
+                    <h3 class="card-header-custom">Save My Information
+                    </h3>
+                  </div>
+                  <div class="card-body">
+                    <form
+                          action="/on/demandware.store/#/default/Order-CreateAccount?ID=00000301&amp;UUID=9faac1c4d20f0be8fc7df2332d"
+                          class="checkout-registration"
+                          method="POST"
+                          name="checkout-register-form" name = &quot;dwfrm_newPasswords&quot; id = &quot;dwfrm_newPasswords&quot; novalidate>
+                      <div class="form-group
+                                  required">
+                        <label class="form-control-label" for="newPassword">
+                          Password
+                        </label>
+                        <input
+                               type="password"
+                               class="form-control"
+                               id="newPassword"
+                               data-missing-error="This field is required."
+                               data-range-error="This field needs 8 to 255 characters"
+                               name="dwfrm_newPasswords_newpassword" required aria-required="true" value="" maxLength="255" minLength="8">
+                        <div class="invalid-feedback">
+                        </div>
+                      </div>
+                      <div class="form-group
+                                  required">
+                        <label class="form-control-label" for="newPasswordConfirm">
+                          Confirm Password
+                        </label>
+                        <input
+                               type="password"
+                               class="form-control"
+                               id="newPasswordConfirm"
+                               data-missing-error="This field is required."
+                               data-range-error="This field needs 8 to 255 characters"
+                               name="dwfrm_newPasswords_newpasswordconfirm" required aria-required="true" value="" maxLength="255" minLength="8">
+                        <div class="invalid-feedback">
+                        </div>
+                      </div>
+                      <input type="hidden" name="csrf_token" value="mHjMvIGvCTn0bWazAkFiG8pbm_rpH_69xMIo-Jc36tOlhaxJVrxYAf06to4LT4cPoQ1hn2ujejF8qxgn5PqSF_e-DkcgAjDIWXv3fAZP3xBi4MT8W5eQZuSP1a_HwC_494AY2-mGqL1F2O1MOJdf4LxXghBVClNbkfplSvPZBQD3AeYTxTk="/>
+                      <button class="btn btn-primary btn-block">
+                        Create Account
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 offset-sm-3 offset-md-0 pull-md-6">
+              <div class="card confirm-details">
+                <div class="card-header">
+                  <h2 class="card-header-custom">Receipt
+                  </h2>
+                </div>
+                <div class="card-body">
+                  <p>
+                    <span class="summary-section-label order-number-label">Order Number:
+                    </span>
+                    <span class="summary-details order-number">00000301
+                    </span>
+                    <br/>
+                    <span class="summary-section-label order-date-label">Order Date:
+                    </span>
+                    <span class="summary-details order-date">2022/08/12
+                    </span>
+                  </p>
+                  <div class="single-shipping" data-shipment-summary="0f976618a521b1c362d0f0726f">
+                    <p class="summary-section-label shipping-addr-label">Shipping Address:
+                    </p>
+                    <div class="summary-details shipping">
+                      <div class="address-summary">
+                        <div>
+                          <span class="firstName">
+                            qweqwe
+                          </span>
+                          <span class="lastName">
+                            qweqwe
+                          </span>
+                        </div>
+                        <div class="address1">
+                          qweqweqwe
+                        </div>
+                        <div class="address2">
+                        </div>
+                        <span class="city">
+                          qweqwe,
+                        </span>
+                        <span class="stateCode">
+                          IA
+                        </span>
+                        <span class="postalCode">
+                          12312
+                        </span>
+                      </div>
+                      <div class="shipping-phone">
+                        123123123123
+                      </div>
+                    </div>
+                    <p class="summary-section-label shipping-method-label">Shipping Method:
+                    </p>
+                    <div class="row summary-details leading-lines">
+                      <div class="col-8 start-lines">
+                        <p class="shipping-method">
+                          <span class="shipping-method-title">Ground
+                          </span>
+                          <span class="shipping-method-arrival-time">
+                            ( 7-10 Business Days )
+                          </span>
+                        </p>
+                      </div>
+                      <div class="col-4 end-lines">
+                        <p class="text-right pricing shipping-method-price">
+                          $8
+                        </p>
+                      </div>
+                    </div>
+                    <div class="summary-details gift-summary d-none">
+                      <p class="summary-section-label">Gift Message:
+                      </p>
+                      <div class="gift-message-summary">
+                      </div>
+                    </div>
+                  </div>
+                  <p class="summary-section-label shipping-addr-label multi-shipping">
+                    Addresses &amp; shipping methods are listed under your items.
+                  </p>
+                  <span class="summary-section-label billing-addr-label">Billing Address:
+                  </span>
+                  <br/>
+                  <div class="summary-details billing">
+                    <div class="address-summary">
+                      <div>
+                        <span class="firstName">
+                          qweqwe
+                        </span>
+                        <span class="lastName">
+                          qweqwe
+                        </span>
+                      </div>
+                      <div class="address1">
+                        qweqweqwe
+                      </div>
+                      <div class="address2">
+                      </div>
+                      <span class="city">
+                        qweqwe,
+                      </span>
+                      <span class="stateCode">
+                        IA
+                      </span>
+                      <span class="postalCode">
+                        12312
+                      </span>
+                    </div>
+                    <span class="order-summary-email">asdasd@gmail.com
+                    </span>
+                    <br/>
+                    <span class="order-summary-phone">123123123123
+                    </span>
+                  </div>
+                  <div class="summary-details">
+                    <span class="summary-section-label payment-info-label">Payment:
+                    </span>
+                    <br/>
+                    <div class="payment-details">
+                      <div class="credit-card-type">
+                        <span>Credit
+                          Visa
+                        </span>
+                      </div>
+                      <div class="credit-card-number">
+                        ************4242
+                      </div>
+                      <div class="credit-card-expiration-date">
+                        <span>Ending 3/2024
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card order-product-summary">
+                <div class="card-body">
+                  <div class="row leading-lines">
+                    <div class="col-6 start-lines">
+                      <span class="order-receipt-label grand-total-label">2 Items
+                      </span>
+                    </div>
+                    <div class="col-6 end-lines">
+                      <span class="grand-total-price">$115
+                      </span>
+                    </div>
+                  </div>
+                  <div class="product-summary-block">
+                    <div class="product-line-item" data-product-line-item="9c4768689410a5ad916cfc0917">
+                      <div class="line-item-header">
+                        <div class="line-item-name">
+                          <span>Pink and Gold Necklace
+                          </span>
+                        </div>
+                      </div>
+                      <div class="product-line-item-details d-flex flex-row">
+                        <div class="item-image">
+                          <img class="product-image"
+                               src="images/small/PG.60119291.JJD99XX.PZ.jpg"
+                               alt="Pink and Gold Necklace, Pink, small"
+                               title="Pink and Gold Necklace, Pink">
+                        </div>
+                        <div class="item-attributes">
+                          <p class="line-item-attributes">Color: Pink
+                          </p>
+                          <div class="item-options">
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <hr class="line-item-divider">
+                      </div>
+                      <div class="row align-items-start">
+                        <div class="col-4 line-item-unit-price">
+                        </div>
+                        <div class="col-4 line-item-quantity">
+                          <p class="line-item-pricing-info">
+                            <span class="line-item-total-text qty-card-quantity-label">
+                              Quantity
+                            </span>
+                            <br/>
+                            <span class="pricing qty-card-quantity-count">1
+                            </span>
+                          </p>
+                        </div>
+                        <div class="col-4 line-item-total-price">
+                          <p class="line-item-pricing-info">
+                            <span class="line-item-total-text line-item-total-price-label">
+                              Total
+                            </span>
+                          </p>
+                          <div class="item-total-9c4768689410a5ad916cfc0917 price">
+                            <div class="strike-through
+                                        non-adjusted-price"
+                                 >
+                              null
+                            </div>
+                            <div class="pricing line-item-total-price-amount item-total-9c4768689410a5ad916cfc0917">$36
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-line-item" data-product-line-item="2430688d784f0fab6d6a4811fc">
+                      <div class="line-item-header">
+                        <div class="line-item-name">
+                          <span>Straight Leg Pant.
+                          </span>
+                        </div>
+                      </div>
+                      <div class="product-line-item-details d-flex flex-row">
+                        <div class="item-image">
+                          <img class="product-image"
+                               src="images/small/PG.10247202.JJI15XX.PZ.jpg"
+                               alt="Straight Leg Pant., White, small"
+                               title="Straight Leg Pant., White">
+                        </div>
+                        <div class="item-attributes">
+                          <p class="line-item-attributes">Color: White
+                          </p>
+                          <p class="line-item-attributes">Size: 8
+                          </p>
+                          <div class="item-options">
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <hr class="line-item-divider">
+                      </div>
+                      <div class="row align-items-start">
+                        <div class="col-4 line-item-unit-price">
+                        </div>
+                        <div class="col-4 line-item-quantity">
+                          <p class="line-item-pricing-info">
+                            <span class="line-item-total-text qty-card-quantity-label">
+                              Quantity
+                            </span>
+                            <br/>
+                            <span class="pricing qty-card-quantity-count">1
+                            </span>
+                          </p>
+                        </div>
+                        <div class="col-4 line-item-total-price">
+                          <p class="line-item-pricing-info">
+                            <span class="line-item-total-text line-item-total-price-label">
+                              Total
+                            </span>
+                          </p>
+                          <div class="item-total-2430688d784f0fab6d6a4811fc price">
+                            <div class="strike-through
+                                        non-adjusted-price"
+                                 >
+                              null
+                            </div>
+                            <div class="pricing line-item-total-price-amount item-total-2430688d784f0fab6d6a4811fc">$79
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card checkout-order-total-summary">
+                <div class="card-body order-total-summary">
+                  <div class="row leading-lines subtotal-item">
+                    <div class="col-6 start-lines">
+                      <p class="order-receipt-label">
+                        <span>Subtotal
+                        </span>
+                      </p>
+                    </div>
+                    <div class="col-6 end-lines">
+                      <p class="text-right">
+                        <span class="sub-total">$115
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row leading-lines order-discount hide-order-discount">
+                    <div class="col-6 start-lines">
+                      <p class="order-receipt-label">
+                        <span>Order Discount
+                        </span>
+                      </p>
+                    </div>
+                    <div class="col-6 end-lines">
+                      <p class="text-right">
+                        <span class="order-discount-total">- $0
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row leading-lines shipping-item">
+                    <div class="col-6 start-lines">
+                      <p class="order-receipt-label">
+                        <span>Shipping
+                        </span>
+                      </p>
+                    </div>
+                    <div class="col-6 end-lines">
+                      <p class="text-right">
+                        <span class="shipping-total-cost">$18
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row leading-lines shipping-discount hide-shipping-discount">
+                    <div class="col-6 start-lines">
+                      <p class="order-receipt-label">
+                        <span>Shipping Discount
+                        </span>
+                      </p>
+                    </div>
+                    <div class="col-6 end-lines">
+                      <p class="text-right">
+                        <span class="shipping-discount-total">- $0
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row leading-lines sales-tax-item">
+                    <div class="col-6 start-lines">
+                      <p class="order-receipt-label">
+                        <span>Sales Tax
+                        </span>
+                      </p>
+                    </div>
+                    <div class="col-6 end-lines">
+                      <p class="text-right">
+                        <span class="tax-total">$7
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row grand-total leading-lines">
+                    <div class="col-6 start-lines">
+                      <p class="order-receipt-label">
+                        <span>Total
+                        </span>
+                      </p>
+                    </div>
+                    <div class="col-6 end-lines">
+                      <p class="text-right">
+                        <span class="grand-total-sum">$140
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <a href="/on/demandware.store/#/default/Home-Show" class="btn btn-primary btn-block order-confirmation-continue-shopping" role="button" aria-pressed="true">
+                  Continue Shopping
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer id="footercontent">
+        <div class="container">
+          <div class="footer-container row">
+            <div class="footer-item col-sm-3 store">
+              <div class="content-asset">
+                <a href="https://zzrl-020.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/#/default/Stores-Find?showMap=true&amp;horizontalView=true&amp;isForm=true" class="menu-footer locate-store">
+                  <h2>Locate Store
+                  </h2>
+                </a>
+                <span class="content">The Store Locator is designed to help you find the closest store near you.
+                </span>
+              </div> 
+              <!-- End content-asset -->
+            </div>
+            <div class="footer-item col-sm-3 collapsible-xs">
+              <div class="content-asset">
+                <div>
+                  <button class="title btn text-left btn-block d-sm-none" aria-expanded="false" aria-controls="collapsible-account">Account
+                  </button>
+                  <h2 class="title d-none d-sm-block">Account
+                  </h2>
+                </div>
+                <ul id="collapsible-account"class="menu-footer content">
+                  <li>
+                    <a href="https://zzrl-020.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/#/default/Account-Show" title="Go to My Account">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://zzrl-020.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/#/default/Order-History" title="Go to Check Order">
+                    </a>
+                  </li>
+                  <!-- <li><a href="https://zzrl-020.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/#/default/Wishlist-Search" title="Go to Wishlist">Find a Wishlist</a></li> -->
+                  <!-- <li><a href="https://zzrl-020.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/#/default/GiftRegistry-Landing" title="Go to Gift Registry">Gift Registry</a></li> -->
+                </ul>
+                <!-- END: footer-account -->
+              </div> 
+              <!-- End content-asset -->
+            </div>
+            <div class="footer-item col-sm-3 collapsible-xs">
+              <div class="content-asset">
+                <div>
+                  <button class="title btn text-left btn-block d-sm-none" aria-expanded="false" aria-controls="collapsible-customer-service">Customer Service
+                  </button>
+                  <h2 class="title d-none d-sm-block">Customer Service
+                  </h2>
+                </div>
+                <ul id="collapsible-customer-service"class="menu-footer content">
+                  <li>
+                    <a href="https://zzrl-020.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/#/default/ContactUs-Landing" title="Go to Contact Us">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" title="Go to Gift Certificates">Gift Certificates
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" title="Go to Help">Help
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" title="Go to Site Map">Site Map
+                    </a>
+                  </li>
+                </ul>
+                <!-- END: footer_support -->
+              </div> 
+              <!-- End content-asset -->
+            </div>
+            <div class="footer-item col-sm-3 collapsible-xs">
+              <div class="content-asset">
+                <div>
+                  <button class="title btn text-left btn-block d-sm-none" aria-expanded="false" aria-controls="collapsible-about">About
+                  </button>
+                  <h2 class="title d-none d-sm-block">About
+                  </h2>
+                </div>
+                <ul id="collapsible-about"class="menu-footer content">
+                  <li>
+                    <a href="https://zzrl-020.sandbox.us01.dx.commercecloud.salesforce.com/s/#/default/about-us.html" title="Go to About Us">About Us
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://zzrl-020.sandbox.us01.dx.commercecloud.salesforce.com/s/#/default/privacy-policy.html" title="Go to Privacy">Privacy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://zzrl-020.sandbox.us01.dx.commercecloud.salesforce.com/s/#/default/terms.html" title="Go to Terms">Terms
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://zzrl-020.sandbox.us01.dx.commercecloud.salesforce.com/s/#/default/jobs-landing.html" title="Go to Jobs">Jobs
+                    </a>
+                  </li>
+                </ul>
+                <!-- END: footer_about -->
+              </div> 
+              <!-- End content-asset -->
+            </div>
+          </div>
+          <hr class="hidden-xs-down" />
+          <div class="row">
+            <div class="col-lg-4 col-sm-5 push-sm-7 push-lg-8 social">
+              <ul class="social-links">
+                <li>
+                  <a class="fa fa-linkedin-square fa-3x" aria-label="LinkedIn" href="https://www.linkedin.com/company/demandware" target="_blank">
+                  </a>
+                </li>
+                <li>
+                  <a class="fa fa-facebook-square fa-3x" aria-label="Facebook" href="https://www.facebook.com/demandware" target="_blank">
+                  </a>
+                </li>
+                <li>
+                  <a class="fa fa-twitter-square fa-3x" aria-label="Twitter" href="https://twitter.com/demandware" target="_blank">
+                  </a>
+                </li>
+                <li>
+                  <a class="fa fa-youtube-square fa-3x" aria-label="YouTube" href="https://www.youtube.com/user/demandware" target="_blank">
+                  </a>
+                </li>
+              </ul>
+              <button class="back-to-top" title="Back to top" aria-label="Back to top">
+                <span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-inverse fa-stack-2x">
+                  </i>
+                  <i class="fa fa-arrow-up fa-stack-1x">
+                  </i>
+                </span>
+              </button>
+            </div>
+            <div class="col-lg-8 col-sm-7 pull-sm-5 pull-lg-4 copyright-notice">
+              <div class="content-asset">
+                <div class="copyright">&copy; 2004-2019 Salesforce. All Rights Reserved.
+                </div>
+                <div class="postscript">This is a demo store only. Orders made will NOT be processed.
+                </div>
+                <!-- SFRA 6.1.0 -->
+              </div> 
+              <!-- End content-asset -->
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="error-messaging">
+    </div>
+    <div class="modal-background">
+    </div>
+    <span class="api-true consented tracking-consent"
+          data-caOnline="true"
+          data-url="/on/demandware.store/#/default/ConsentTracking-GetContent?cid=tracking_hint"
+          data-reject="/on/demandware.store/#/default/ConsentTracking-SetConsent?consent=false"
+          data-accept="/on/demandware.store/#/default/ConsentTracking-SetConsent?consent=true"
+          data-acceptText="Yes"
+          data-rejectText="No"
+          data-heading="Tracking Consent"
+          data-tokenName="csrf_token"
+          data-token="7ZMJ8oXVssm0LfxrTum9JV9P4WlSjUpnJiGjurO8AUd0GEwj98pVj0VoMGXTOj8Px56IgEB3sjvWFqLT9Z0R4L-oCUcH7_kbveU5sSJIItRPMYdpkJpCi1ljriNj6e8lws6714f2d0mXA8FaCVszVvhP4xmUInIU62RZbYB7VZ5EPUqGTnM="
+          >
+    </span>
+    <!-- Demandware Analytics code 1.0 (body_end-analytics-tracking-asynch.js) -->
+    <script type="text/javascript">//<!--
+      /* <![CDATA[ */
+      function trackPage() {
+        try{
+          var trackingUrl = "https://zzrl-020.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/#/default/__Analytics-Start";
+          var dwAnalytics = dw.__dwAnalytics.getTracker(trackingUrl);
+          if (typeof dw.ac == "undefined") {
+            dwAnalytics.trackPageView();
+          }
+          else {
+            dw.ac.setDWAnalytics(dwAnalytics);
+          }
+        }
+        catch(err) {
+        };
+      }
+      /* ]]> */
+      // -->
+    </script>
+    <script type="text/javascript" src="/on/demandware.static/#/-/default/v1660035594711/internal/jscript/dwanalytics-22.2.js" async="async" onload="trackPage()">
+    </script>
+    <!-- Demandware Active Data (body_end-active_data.js) -->
+    <script src="/on/demandware.static/#/-/default/v1660035594711/internal/jscript/dwac-21.7.js" type="text/javascript" async="async">
+    </script>
+    <!-- CQuotient Activity Tracking (body_end-cquotient.js) -->
+    <script src="https://cdn.cquotient.com/js/v2/gretel.min.js" type="text/javascript" async="async">
+    </script>
+  </body>
+</html>
